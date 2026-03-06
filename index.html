@@ -3,100 +3,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vansh Mohan - GenAI Infrastructure Engineer specializing in LLM deployment, optimization, and production systems">
-    <title>Vansh Mohan | GenAI Infrastructure Engineer</title>
+    <meta name="description" content="Vansh Mohan - GenAI Developer specializing in LLM infrastructure, HPC systems, and production AI services">
+    <title>Vansh Mohan | GenAI Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="#" class="nav-logo">VM</a>
+            <div class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">vm</span>
+                <span class="logo-bracket">}</span>
+            </div>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
+                <a href="#about" class="nav-link" data-section="about">about</a>
+                <a href="#stack" class="nav-link" data-section="stack">stack</a>
+                <a href="#work" class="nav-link" data-section="work">work</a>
+                <a href="#projects" class="nav-link" data-section="projects">projects</a>
+                <a href="#contact" class="nav-link" data-section="contact">contact</a>
             </div>
         </div>
     </nav>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="container">
-                <p class="hero-label">GenAI Infrastructure Engineer</p>
-                <h1 class="hero-title">Vansh Mohan</h1>
-                <p class="hero-subtitle">
-                    I build production-ready LLM systems that scale.<br>
-                    From inference optimization to cost-efficient deployments.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">1.5M+</span>
-                        <span class="stat-label">Interactions Processed</span>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <div class="terminal-title">vansh@gwdg:~</div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">45%</span>
-                        <span class="stat-label">Efficiency Gains</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">40-60%</span>
-                        <span class="stat-label">Cost Savings</span>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command" id="typewriter"></span>
+                            <span class="cursor">_</span>
+                        </div>
+                        <div class="terminal-output" id="terminalOutput">
+                            <!-- Output will be injected by JS -->
+                        </div>
                     </div>
                 </div>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+
+                <div class="hero-content">
+                    <h1 class="hero-name">Vansh Mohan</h1>
+                    <p class="hero-title">GenAI Developer <span class="separator">//</span> HPC Infrastructure <span class="separator">//</span> Production AI Systems</p>
+                    <p class="hero-tagline">Building the infrastructure that makes AI accessible at scale.</p>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn-primary">
+                            <span class="btn-icon">→</span>
+                            View My Work
+                        </a>
+                        <a href="#contact" class="btn-secondary">Let's Talk</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section">
+        <section class="section" id="about">
             <div class="container">
-                <h2 class="section-title">About</h2>
-                <div class="about-content">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">About</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-grid">
                     <div class="about-text">
-                        <p>
-                            I'm a GenAI Infrastructure Engineer currently working at <strong>GWDG</strong> (Gesellschaft für wissenschaftliche Datenverarbeitung mbH Göttingen), where I build production LLM systems on HPC infrastructure.
-                        </p>
-                        <p>
-                            My work sits at the intersection of <strong>machine learning</strong>, <strong>systems engineering</strong>, and <strong>cost optimization</strong>. I don't just deploy models — I build the infrastructure that makes them accessible, efficient, and affordable at scale.
-                        </p>
-                        <p>
-                            Currently pursuing my <strong>MSc in Applied Data Science</strong> at University of Göttingen, with a thesis focused on LLM inference optimization for production AI-as-a-Service environments.
-                        </p>
+                        <p class="lead">Currently building production AI services at <strong>GWDG</strong> — Germany's national supercomputing center and part of the NHR network.</p>
+
+                        <p>I work at the intersection of <em>Generative AI</em>, <em>High-Performance Computing</em>, and <em>production infrastructure</em>. My focus: making powerful AI systems accessible to researchers and enterprises through robust, scalable platforms.</p>
+
+                        <p>I've contributed to the <strong>SAIA Platform</strong>, built batch inference services handling thousands of requests, and developed security packages for sensitive research data. I don't just deploy models — I architect the infrastructure around them.</p>
+
+                        <div class="about-highlight">
+                            <div class="highlight-icon">→</div>
+                            <div class="highlight-text">
+                                <strong>MSc Thesis:</strong> Multi-Dimensional Evaluation Framework for LLM Inference Optimization in Production AI-as-a-Service Environments
+                            </div>
+                        </div>
                     </div>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>LLM Infrastructure</h3>
-                            <ul>
-                                <li>vLLM & SGLang</li>
-                                <li>Quantization (GPTQ, AWQ)</li>
-                                <li>Model Serving Optimization</li>
-                                <li>HuggingFace Transformers</li>
-                            </ul>
+
+                    <div class="about-card">
+                        <div class="card-header">
+                            <span class="card-icon">◈</span>
+                            <span class="card-label">Current Focus</span>
                         </div>
-                        <div class="skill-category">
-                            <h3>Production Engineering</h3>
-                            <ul>
-                                <li>FastAPI & REST APIs</li>
-                                <li>HPC/SLURM Orchestration</li>
-                                <li>Docker & CI/CD</li>
-                                <li>Async Python Patterns</li>
-                            </ul>
+                        <ul class="focus-list">
+                            <li>
+                                <span class="focus-tag">LLM</span>
+                                Inference optimization & serving
+                            </li>
+                            <li>
+                                <span class="focus-tag">HPC</span>
+                                SLURM orchestration & GPU clusters
+                            </li>
+                            <li>
+                                <span class="focus-tag">API</span>
+                                Production service development
+                            </li>
+                            <li>
+                                <span class="focus-tag">SEC</span>
+                                Secure data handling (AES-256)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="section section-dark" id="stack">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">Tech Stack</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="stack-grid">
+                    <!-- AI/ML -->
+                    <div class="stack-category" data-category="ai">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <h3>GenAI & ML</h3>
                         </div>
-                        <div class="skill-category">
-                            <h3>Data & Analytics</h3>
-                            <ul>
-                                <li>PyTorch & TensorFlow</li>
-                                <li>Performance Benchmarking</li>
-                                <li>Real-time Dashboards</li>
-                                <li>Cost Modeling (FinOps)</li>
+                        <div class="stack-items">
+                            <div class="stack-item" data-skill="vLLM">
+                                <span class="item-name">vLLM</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="PyTorch">
+                                <span class="item-name">PyTorch</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="HuggingFace">
+                                <span class="item-name">HuggingFace</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="LangChain">
+                                <span class="item-name">LangChain</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="TensorFlow">
+                                <span class="item-name">TensorFlow</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="GGUF/GPTQ/AWQ">
+                                <span class="item-name">Quantization</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="stack-category" data-category="languages">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                                </svg>
+                            </div>
+                            <h3>Languages</h3>
+                        </div>
+                        <div class="stack-items">
+                            <div class="stack-item" data-skill="Python">
+                                <span class="item-name">Python</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="Bash">
+                                <span class="item-name">Bash</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="JavaScript">
+                                <span class="item-name">JavaScript</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="SQL">
+                                <span class="item-name">SQL</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="Java">
+                                <span class="item-name">Java</span>
+                                <span class="item-level familiar">Familiar</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web & APIs -->
+                    <div class="stack-category" data-category="web">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                            </div>
+                            <h3>Web & APIs</h3>
+                        </div>
+                        <div class="stack-items">
+                            <div class="stack-item" data-skill="FastAPI">
+                                <span class="item-name">FastAPI</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="REST APIs">
+                                <span class="item-name">REST APIs</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="Streamlit">
+                                <span class="item-name">Streamlit</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="Flask">
+                                <span class="item-name">Flask</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="HTML/CSS">
+                                <span class="item-name">HTML/CSS</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Infra -->
+                    <div class="stack-category" data-category="devops">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                                </svg>
+                            </div>
+                            <h3>DevOps & Infra</h3>
+                        </div>
+                        <div class="stack-items">
+                            <div class="stack-item" data-skill="SLURM">
+                                <span class="item-name">SLURM</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="Linux">
+                                <span class="item-name">Linux</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="Docker">
+                                <span class="item-name">Docker</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="Git/GitLab">
+                                <span class="item-name">Git / GitLab</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="CI/CD">
+                                <span class="item-name">CI/CD Pipelines</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="pytest">
+                                <span class="item-name">pytest</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="stack-category" data-category="databases">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                                </svg>
+                            </div>
+                            <h3>Databases</h3>
+                        </div>
+                        <div class="stack-items">
+                            <div class="stack-item" data-skill="PostgreSQL">
+                                <span class="item-name">PostgreSQL</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="SQLite">
+                                <span class="item-name">SQLite</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="SQLAlchemy">
+                                <span class="item-name">SQLAlchemy</span>
+                                <span class="item-level expert">Expert</span>
+                            </div>
+                            <div class="stack-item" data-skill="SQLModel">
+                                <span class="item-name">SQLModel</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monitoring -->
+                    <div class="stack-category" data-category="monitoring">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                </svg>
+                            </div>
+                            <h3>Monitoring & Viz</h3>
+                        </div>
+                        <div class="stack-items">
+                            <div class="stack-item" data-skill="Grafana">
+                                <span class="item-name">Grafana</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="Prometheus">
+                                <span class="item-name">Prometheus</span>
+                                <span class="item-level familiar">Familiar</span>
+                            </div>
+                            <div class="stack-item" data-skill="D3.js">
+                                <span class="item-name">D3.js</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                            <div class="stack-item" data-skill="Chart.js">
+                                <span class="item-name">Chart.js</span>
+                                <span class="item-level proficient">Proficient</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="section" id="work">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">Experience</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="experience-tabs">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="gwdg">GWDG</button>
+                        <button class="tab-btn" data-tab="imms">IMMS</button>
+                        <button class="tab-btn" data-tab="lavision">LaVision</button>
+                        <button class="tab-btn" data-tab="earlier">Earlier</button>
+                    </div>
+
+                    <div class="tabs-content">
+                        <div class="tab-panel active" id="gwdg">
+                            <div class="job-header">
+                                <h3>Student Assistant — HPC</h3>
+                                <p class="job-company">GWDG (Gesellschaft für wissenschaftliche Datenverarbeitung)</p>
+                                <p class="job-meta">Jul 2025 — Present · Göttingen, Germany</p>
+                            </div>
+                            <ul class="job-details">
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    Built <strong>production batch inference service</strong> on SAIA Platform enabling researchers to run multi-LLM workloads via user-friendly interface with automatic job recovery
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    Developed <strong>GWDGenclave</strong> — Python security package implementing AES-256-GCM encryption for sensitive research data in HPC workflows
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    Created end-to-end <strong>LLM benchmarking framework</strong> profiling performance across vLLM, SGLang, quantization strategies, and workload patterns
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    Built <strong>interactive JavaScript dashboards</strong> for real-time inference comparison, log analysis, and infrastructure cost modeling
+                                </li>
                             </ul>
+                            <div class="job-tags">
+                                <span>vLLM</span>
+                                <span>FastAPI</span>
+                                <span>SLURM</span>
+                                <span>Python</span>
+                                <span>AES-256</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+
+                        <div class="tab-panel" id="imms">
+                            <div class="job-header">
+                                <h3>Werkstudent — AI & LLM Engineer</h3>
+                                <p class="job-company">IMMS (Institute for Methods and Methodological Principles)</p>
+                                <p class="job-meta">Mar 2024 — Dec 2024 · Göttingen, Germany</p>
+                            </div>
+                            <ul class="job-details">
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    Developed <strong>AI Moderator System</strong> using LLMs (LLaMa 3, Mixtral) to analyze large-scale social media conversations for deliberative quality
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    Engineered <strong>scalable data pipelines</strong> for ingestion, preprocessing, and contextual embedding generation enabling real-time moderation
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    <strong>Fine-tuned LLMs</strong> (LLaMa 3, Mixtral) achieving 76% accuracy on moderation intervention tasks
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    Orchestrated <strong>HPC deployments via SLURM</strong>, achieving 45% optimization in processing efficiency
+                                </li>
+                            </ul>
+                            <div class="job-tags">
+                                <span>LLaMa 3</span>
+                                <span>Mixtral</span>
+                                <span>Fine-tuning</span>
+                                <span>SLURM</span>
+                                <span>Embeddings</span>
+                            </div>
+                        </div>
+
+                        <div class="tab-panel" id="lavision">
+                            <div class="job-header">
+                                <h3>Werkstudent — IT Data Science</h3>
+                                <p class="job-company">LaVision GmbH</p>
+                                <p class="job-meta">Apr 2022 — Oct 2023 · Göttingen, Germany</p>
+                            </div>
+                            <ul class="job-details">
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    Designed <strong>scalable data solutions</strong> with APIs for streamlined hardware data acquisition
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    Developed <strong>interactive D3.js and Plotly dashboards</strong> for real-time and historical hardware data visualization
+                                </li>
+                            </ul>
+                            <div class="job-tags">
+                                <span>Python</span>
+                                <span>D3.js</span>
+                                <span>Plotly</span>
+                                <span>REST APIs</span>
+                            </div>
+                        </div>
+
+                        <div class="tab-panel" id="earlier">
+                            <div class="job-header">
+                                <h3>Earlier Experience</h3>
+                            </div>
+                            <div class="earlier-jobs">
+                                <div class="earlier-job">
+                                    <h4>Graduate Research Trainee — ML</h4>
+                                    <p class="job-company">Amity University · Sep 2020 — Mar 2021</p>
+                                    <p>Built ML pipelines for epileptic seizure prediction using BiLSTM and CNN architectures. Developed hospital management system with PostgreSQL + Flask.</p>
+                                </div>
+                                <div class="earlier-job">
+                                    <h4>Data Scientist Intern</h4>
+                                    <p class="job-company">Cadence Design Systems · Jun 2018 — Aug 2018</p>
+                                    <p>Developed predictive software for electronic circuit simulation using semi-supervised ML on PyTorch. Built Grafana dashboards for model performance tracking.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -104,302 +475,208 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section section-alt">
+        <section class="section section-dark" id="projects">
             <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">Projects</h2>
+                    <div class="section-line"></div>
+                </div>
 
-                    <!-- Project 1: LLMAPI -->
-                    <article class="project-card featured">
-                        <div class="project-header">
-                            <span class="project-tag">Production</span>
-                            <h3>LLMAPI - Batch Inference Gateway</h3>
-                        </div>
-                        <p class="project-description">
-                            OpenAI-compatible batch inference API built on vLLM. Enables researchers to process thousands of prompts at zero API cost with a one-line code change.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">1,700+</span>
-                                <span class="metric-label">Lines of Code</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">1,400+</span>
-                                <span class="metric-label">Requests in 3min</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">$0</span>
-                                <span class="metric-label">External API Cost</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>FastAPI</span>
-                            <span>vLLM</span>
-                            <span>Async Python</span>
-                            <span>OpenAI SDK</span>
-                        </div>
-                        <div class="project-highlights">
-                            <h4>Key Features</h4>
-                            <ul>
-                                <li>Drop-in OpenAI SDK replacement</li>
-                                <li>Batch processing with 10K+ request support</li>
-                                <li>Background workers with progress tracking</li>
-                                <li>Streaming and non-streaming completions</li>
-                                <li>Multi-model support with hot-swapping</li>
-                            </ul>
-                        </div>
-                    </article>
+                <div class="projects-showcase">
+                    <!-- Featured Project -->
+                    <div class="project-featured">
+                        <div class="project-image">
+                            <div class="code-window">
+                                <div class="code-header">
+                                    <span class="code-dot"></span>
+                                    <span class="code-dot"></span>
+                                    <span class="code-dot"></span>
+                                    <span class="code-title">llmapi_demo.py</span>
+                                </div>
+                                <pre class="code-content"><code><span class="code-comment"># One-line switch from OpenAI to local</span>
+<span class="code-keyword">from</span> openai <span class="code-keyword">import</span> OpenAI
 
-                    <!-- Project 2: Benchmarking Framework -->
-                    <article class="project-card">
-                        <div class="project-header">
-                            <span class="project-tag">Research</span>
-                            <h3>LLM Benchmarking Framework</h3>
-                        </div>
-                        <p class="project-description">
-                            Production-grade benchmarking harness for LLM inference. Tests across concurrency levels, quantization strategies, and token lengths with GPU telemetry.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">8</span>
-                                <span class="metric-label">Concurrency Levels</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">9+</span>
-                                <span class="metric-label">Metrics Tracked</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">1Hz</span>
-                                <span class="metric-label">GPU Telemetry</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>Python asyncio</span>
-                            <span>nvidia-smi</span>
-                            <span>vLLM</span>
-                            <span>ShareGPT</span>
-                        </div>
-                    </article>
+client = OpenAI(
+    <span class="code-param">base_url</span>=<span class="code-string">"http://localhost:8000/v1"</span>,
+    <span class="code-param">api_key</span>=<span class="code-string">"local"</span>
+)
 
-                    <!-- Project 3: HPC Research Portal -->
-                    <article class="project-card">
-                        <div class="project-header">
-                            <span class="project-tag">Production</span>
-                            <h3>HPC Research Portal</h3>
-                        </div>
-                        <p class="project-description">
-                            Full-stack web application for managing batch inference jobs on HPC infrastructure with SLURM integration and real-time monitoring.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">348+</span>
-                                <span class="metric-label">Lines FastAPI</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">SQLite</span>
-                                <span class="metric-label">Job Tracking</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Auto</span>
-                                <span class="metric-label">Job Recovery</span>
+<span class="code-comment"># Same code, zero API costs</span>
+response = client.chat.completions.create(
+    <span class="code-param">model</span>=<span class="code-string">"Qwen2-7B-Instruct"</span>,
+    <span class="code-param">messages</span>=[{<span class="code-string">"role"</span>: <span class="code-string">"user"</span>,
+               <span class="code-string">"content"</span>: <span class="code-string">"Hello!"</span>}]
+)</code></pre>
                             </div>
                         </div>
-                        <div class="project-tech">
-                            <span>FastAPI</span>
-                            <span>SQLAlchemy</span>
-                            <span>SLURM</span>
-                            <span>Jinja2</span>
+                        <div class="project-info">
+                            <span class="project-label">Featured Project</span>
+                            <h3>LLMAPI — Batch Inference Gateway</h3>
+                            <p class="project-description">
+                                Production-ready OpenAI-compatible API built on vLLM. Enables researchers to process thousands of prompts with zero external API costs. Features batch processing, background workers, progress tracking, and streaming completions.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-value">1,700+</span>
+                                    <span class="stat-label">Lines of Code</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">10K+</span>
+                                    <span class="stat-label">Requests/Batch</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">$0</span>
+                                    <span class="stat-label">API Costs</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span>FastAPI</span>
+                                <span>vLLM</span>
+                                <span>Async Python</span>
+                                <span>OpenAI SDK</span>
+                                <span>SLURM</span>
+                            </div>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- Project 4: Multi-Model Dashboard -->
-                    <article class="project-card">
-                        <div class="project-header">
-                            <span class="project-tag">DevOps</span>
-                            <h3>Real-Time Model Comparison</h3>
-                        </div>
-                        <p class="project-description">
-                            Interactive dashboard for comparing multiple LLM configurations in real-time. Side-by-side inference with latency, throughput, and TTFT metrics.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">3</span>
-                                <span class="metric-label">Parallel Models</span>
+                    <!-- Other Projects Grid -->
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <div class="card-top">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">Live</span>
-                                <span class="metric-label">Streaming</span>
+                            <h4>LLM Benchmarking Framework</h4>
+                            <p>End-to-end benchmarking harness for LLM inference. Tests across 8 concurrency levels, multiple quantization strategies, with GPU telemetry at 1Hz polling.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>asyncio</span>
+                                <span>nvidia-smi</span>
+                                <span>vLLM</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">Chart.js</span>
-                                <span class="metric-label">Visualizations</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>Chart.js</span>
-                            <span>Streamlit</span>
-                            <span>SSH Tunnels</span>
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Project 5: GWDGenclave -->
-                    <article class="project-card">
-                        <div class="project-header">
-                            <span class="project-tag">Security</span>
-                            <h3>GWDGenclave</h3>
-                        </div>
-                        <p class="project-description">
-                            Python security package implementing AES-256-GCM encryption for sensitive research data, integrated into production HPC workflows.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">AES-256</span>
-                                <span class="metric-label">Encryption</span>
+                        <article class="project-card">
+                            <div class="card-top">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">100K</span>
-                                <span class="metric-label">PBKDF2 Iterations</span>
+                            <h4>HPC Research Portal</h4>
+                            <p>Full-stack web application for batch inference on HPC. Upload CSVs, configure parameters, submit SLURM jobs, monitor progress — all from the browser.</p>
+                            <div class="project-tech">
+                                <span>FastAPI</span>
+                                <span>SQLAlchemy</span>
+                                <span>SLURM</span>
+                                <span>Jinja2</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">GCM</span>
-                                <span class="metric-label">Auth Mode</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>cryptography</span>
-                            <span>PBKDF2</span>
-                            <span>Python</span>
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Project 6: AI Moderator -->
-                    <article class="project-card">
-                        <div class="project-header">
-                            <span class="project-tag">ML/NLP</span>
-                            <h3>AI Moderator System</h3>
-                        </div>
-                        <p class="project-description">
-                            Hybrid moderation system combining rule-based classifiers with fine-tuned LLMs (LLaMa 3, Mixtral) for analyzing social media conversations at scale.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">1.5M+</span>
-                                <span class="metric-label">Interactions</span>
+                        <article class="project-card">
+                            <div class="card-top">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">76%</span>
-                                <span class="metric-label">Accuracy</span>
+                            <h4>GWDGenclave</h4>
+                            <p>Security package for sensitive research data. AES-256-GCM encryption with PBKDF2 key derivation (100K iterations). Integrated into production HPC workflows.</p>
+                            <div class="project-tech">
+                                <span>cryptography</span>
+                                <span>PBKDF2</span>
+                                <span>AES-256-GCM</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">45%</span>
-                                <span class="metric-label">Efficiency Gain</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>LLaMa 3</span>
-                            <span>Mixtral</span>
-                            <span>Fine-tuning</span>
-                            <span>SLURM</span>
-                        </div>
-                    </article>
+                        </article>
 
+                        <article class="project-card">
+                            <div class="card-top">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4>Real-Time Model Comparison</h4>
+                            <p>Interactive dashboard comparing multiple LLM configurations live. Side-by-side streaming inference with latency, throughput, and TTFT metrics visualization.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>Chart.js</span>
+                                <span>Streamlit</span>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="card-top">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4>AI Moderator System</h4>
+                            <p>Hybrid moderation system combining rule-based classifiers with fine-tuned LLMs. Processed 1.5M+ social media interactions with 76% accuracy on intervention tasks.</p>
+                            <div class="project-tech">
+                                <span>LLaMa 3</span>
+                                <span>Mixtral</span>
+                                <span>Fine-tuning</span>
+                                <span>SLURM</span>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="card-top">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4>Inference Optimization Research</h4>
+                            <p>MSc thesis work: Multi-dimensional evaluation framework for LLM inference in production AI-as-a-Service. Quantization analysis, cost modeling, deployment recommendations.</p>
+                            <div class="project-tech">
+                                <span>vLLM</span>
+                                <span>SGLang</span>
+                                <span>GPTQ</span>
+                                <span>AWQ</span>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
+        <!-- Education -->
+        <section class="section" id="education">
             <div class="container">
-                <h2 class="section-title">Experience</h2>
-                <div class="timeline">
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker current"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>Student Assistant - High Performance Computing</h3>
-                                <span class="timeline-date">Jul 2025 - Present</span>
-                            </div>
-                            <p class="timeline-company">GWDG, Göttingen</p>
-                            <ul class="timeline-details">
-                                <li>Building production batch inference service on SAIA Platform for large-scale LLM workloads</li>
-                                <li>Developed GWDGenclave security package (AES-256-GCM) for sensitive research data</li>
-                                <li>Created end-to-end benchmarking framework for LLM inference optimization</li>
-                                <li>Built JavaScript dashboards for real-time infrastructure monitoring and cost modeling</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>Werkstudent - AI and LLM Engineer</h3>
-                                <span class="timeline-date">Mar 2024 - Dec 2024</span>
-                            </div>
-                            <p class="timeline-company">IMMS, Göttingen</p>
-                            <ul class="timeline-details">
-                                <li>Developed AI Moderator System using LLMs for analyzing 1.5M+ social media conversations</li>
-                                <li>Fine-tuned LLaMa 3 and Mixtral, achieving 76% accuracy on moderation tasks</li>
-                                <li>Orchestrated HPC deployments with SLURM, achieving 45% efficiency optimization</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>Werkstudent - IT (Data Science)</h3>
-                                <span class="timeline-date">Apr 2022 - Oct 2023</span>
-                            </div>
-                            <p class="timeline-company">LaVision GmbH, Göttingen</p>
-                            <ul class="timeline-details">
-                                <li>Designed scalable data solutions with APIs for hardware data acquisition</li>
-                                <li>Developed D3.js and Plotly dashboards for real-time data visualization</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>Graduate Research Trainee - ML</h3>
-                                <span class="timeline-date">Sep 2020 - Mar 2021</span>
-                            </div>
-                            <p class="timeline-company">Amity University, India</p>
-                            <ul class="timeline-details">
-                                <li>Built ML pipelines for epileptic seizure prediction using BiLSTM and CNN</li>
-                                <li>Developed hospital management system with PostgreSQL and Flask</li>
-                            </ul>
-                        </div>
-                    </div>
-
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">Education</h2>
+                    <div class="section-line"></div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Education Section -->
-        <section class="section section-alt">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
                 <div class="education-grid">
-                    <div class="education-card">
-                        <div class="education-degree">MSc Applied Data Science</div>
-                        <div class="education-school">Georg-August-Universität Göttingen</div>
-                        <div class="education-date">Expected 2026</div>
-                        <div class="education-thesis">
-                            <strong>Thesis:</strong> A Multi-Dimensional Evaluation Framework for LLM Inference Optimization in Production AI-as-a-Service Environments
+                    <div class="edu-card">
+                        <div class="edu-degree">MSc Applied Data Science</div>
+                        <div class="edu-school">Georg-August-Universität Göttingen</div>
+                        <div class="edu-year">Expected 2026</div>
+                        <div class="edu-details">
+                            <p><strong>Application Domain:</strong> Digital Humanities</p>
+                            <p><strong>Thesis:</strong> A Multi-Dimensional Evaluation Framework for LLM Inference Optimization in Production AI-as-a-Service Environments</p>
                         </div>
                     </div>
-                    <div class="education-card">
-                        <div class="education-degree">Bachelor of Engineering</div>
-                        <div class="education-school">Netaji Subhas Institute of Technology, Delhi</div>
-                        <div class="education-date">2016 - 2020</div>
-                        <div class="education-courses">
-                            AI Techniques, Data Structures, Database Systems
+                    <div class="edu-card">
+                        <div class="edu-degree">Bachelor of Engineering</div>
+                        <div class="edu-school">Netaji Subhas Institute of Technology, Delhi</div>
+                        <div class="edu-year">2016 — 2020</div>
+                        <div class="edu-details">
+                            <p><strong>Relevant Coursework:</strong> AI Techniques, Data Structures, Database Systems, Open Source Technologies</p>
                         </div>
                     </div>
                 </div>
@@ -407,28 +684,36 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section">
+        <section class="section section-dark" id="contact">
             <div class="container">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="contact-intro">
-                    I'm interested in GenAI infrastructure roles where I can build production systems at scale.
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:vansh.mohan@stud.uni-goettingen.de" class="contact-card">
-                        <div class="contact-icon">@</div>
-                        <div class="contact-label">Email</div>
-                        <div class="contact-value">vansh.mohan@stud.uni-goettingen.de</div>
-                    </a>
-                    <a href="https://linkedin.com/in/vanshmohan/" target="_blank" class="contact-card">
-                        <div class="contact-icon">in</div>
-                        <div class="contact-label">LinkedIn</div>
-                        <div class="contact-value">linkedin.com/in/vanshmohan</div>
-                    </a>
-                    <a href="https://github.com/vanshmohan" target="_blank" class="contact-card">
-                        <div class="contact-icon">&lt;/&gt;</div>
-                        <div class="contact-label">GitHub</div>
-                        <div class="contact-value">github.com/vanshmohan</div>
-                    </a>
+                <div class="contact-content">
+                    <span class="section-number">06</span>
+                    <h2 class="contact-title">Let's Build Something</h2>
+                    <p class="contact-text">
+                        I'm interested in GenAI infrastructure roles where I can build production systems at scale.
+                        Whether it's optimizing inference pipelines, architecting AI services, or bridging research and deployment — I'm in.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:vansh.mohan@stud.uni-goettingen.de" class="contact-link">
+                            <span class="link-icon">@</span>
+                            <span class="link-text">vansh.mohan@stud.uni-goettingen.de</span>
+                        </a>
+                        <a href="https://linkedin.com/in/vanshmohan" target="_blank" class="contact-link">
+                            <span class="link-icon">in</span>
+                            <span class="link-text">linkedin.com/in/vanshmohan</span>
+                        </a>
+                        <a href="https://github.com/vanshmohan" target="_blank" class="contact-link">
+                            <span class="link-icon">&lt;/&gt;</span>
+                            <span class="link-text">github.com/vanshmohan</span>
+                        </a>
+                    </div>
+                    <div class="contact-languages">
+                        <span class="lang">English (C1)</span>
+                        <span class="lang-sep">·</span>
+                        <span class="lang">German (B1)</span>
+                        <span class="lang-sep">·</span>
+                        <span class="lang">Hindi (Native)</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -436,8 +721,10 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Built with care. Deployed with confidence.</p>
+            <p>Designed & Built by Vansh Mohan</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
