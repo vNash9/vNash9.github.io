@@ -16,7 +16,7 @@ const commands = [
 
 const outputLines = [
     { text: '<span class="output-key">name:</span> Vansh Mohan', delay: 0 },
-    { text: '<span class="output-key">role:</span> Student Assistant - HPC & AI Services @ <span class="output-highlight">GWDG</span>', delay: 100 },
+    { text: '<span class="output-key">role:</span> GenAI Developer @ <span class="output-highlight">GWDG</span>', delay: 100 },
     { text: '<span class="output-key">focus:</span> LLM Infrastructure | HPC | Production AI', delay: 200 },
     { text: '<span class="output-key">stack:</span> vLLM, FastAPI, SLURM, PyTorch', delay: 300 },
     { text: '<span class="output-key">status:</span> Building AI services that scale', delay: 400 },
