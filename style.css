@@ -644,20 +644,23 @@ body {
 
 .job-details li {
     display: flex;
-    gap: 1rem;
+    align-items: flex-start;
+    gap: 0.75rem;
     margin-bottom: 0.75rem;
     color: var(--text-secondary);
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .detail-marker {
     color: var(--accent);
     flex-shrink: 0;
+    margin-top: 0.1rem;
 }
 
 .job-details strong {
-    color: var(--text-primary);
-    font-weight: 500;
+    color: var(--accent);
+    font-weight: 600;
 }
 
 .job-tags {
@@ -909,6 +912,112 @@ body {
     color: var(--text-primary);
 }
 
+/* Thesis Card - Full Width */
+.thesis-card {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border: 1px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.thesis-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+}
+
+.thesis-label {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+}
+
+.thesis-card .edu-degree {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+/* STAR Layout */
+.thesis-star {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.star-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.star-label {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.star-content {
+    flex: 1;
+}
+
+.star-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.star-content p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.thesis-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.thesis-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    background: var(--accent-glow);
+    color: var(--accent);
+    border-radius: 4px;
+    border: 1px solid var(--accent);
+}
+
+@media (max-width: 768px) {
+    .thesis-star {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== CONTACT ===== */
 .contact-content {
     max-width: 600px;
@@ -1082,5 +1191,154 @@ body {
     .contact-link {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    width: 0%;
+    z-index: 1001;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* ===== SLIDE DOT INDICATORS ===== */
+.slide-dots {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 999;
+}
+
+.slide-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 2px solid var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition);
+    position: relative;
+}
+
+.slide-dots .dot::before {
+    content: attr(title);
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+    border: 1px solid var(--border);
+}
+
+.slide-dots .dot:hover::before {
+    opacity: 1;
+}
+
+.slide-dots .dot:hover {
+    background: var(--text-muted);
+    border-color: var(--text-secondary);
+    transform: scale(1.2);
+}
+
+.slide-dots .dot.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* ===== ARROW NAVIGATION ===== */
+.arrow-nav {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 999;
+}
+
+.arrow-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+}
+
+.arrow-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.arrow-btn:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+.arrow-btn:active {
+    transform: scale(0.95);
+}
+
+.arrow-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Hide presentation nav on mobile */
+@media (max-width: 768px) {
+    .slide-dots {
+        right: 1rem;
+    }
+
+    .slide-dots .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .slide-dots .dot::before {
+        display: none;
+    }
+
+    .arrow-nav {
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .arrow-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .arrow-btn svg {
+        width: 20px;
+        height: 20px;
     }
 }

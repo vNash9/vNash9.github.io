@@ -11,8 +11,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Progress bar at top -->
+    <div class="progress-bar" id="progressBar"></div>
+
     <!-- Cursor glow effect -->
     <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Slide dot indicators on right side -->
+    <nav class="slide-dots" id="slideDots">
+        <a href="#hero" class="dot active" data-section="hero" title="Home"></a>
+        <a href="#about" class="dot" data-section="about" title="About"></a>
+        <a href="#stack" class="dot" data-section="stack" title="Tech Stack"></a>
+        <a href="#work" class="dot" data-section="work" title="Experience"></a>
+        <a href="#projects" class="dot" data-section="projects" title="Projects"></a>
+        <a href="#education" class="dot" data-section="education" title="Education"></a>
+        <a href="#contact" class="dot" data-section="contact" title="Contact"></a>
+    </nav>
+
+    <!-- Arrow navigation -->
+    <div class="arrow-nav">
+        <button class="arrow-btn arrow-up" id="arrowUp" title="Previous section">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="18 15 12 9 6 15"/>
+            </svg>
+        </button>
+        <button class="arrow-btn arrow-down" id="arrowDown" title="Next section">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+            </svg>
+        </button>
+    </div>
 
     <!-- Navigation -->
     <nav class="nav">
@@ -27,6 +55,7 @@
                 <a href="#stack" class="nav-link" data-section="stack">stack</a>
                 <a href="#work" class="nav-link" data-section="work">work</a>
                 <a href="#projects" class="nav-link" data-section="projects">projects</a>
+                <a href="#education" class="nav-link" data-section="education">education</a>
                 <a href="#contact" class="nav-link" data-section="contact">contact</a>
             </div>
         </div>
@@ -84,9 +113,9 @@
 
                 <div class="about-grid">
                     <div class="about-text">
-                        <p class="lead">Currently building production AI services at <strong>GWDG</strong> — Germany's national supercomputing center and part of the NHR network.</p>
+                        <p class="lead">My journey with <strong>GWDG</strong> started as a user. As a student, free HPC access let me experiment with deploying LLMs, fail, learn, and try again — that access changed everything. I became an advocate, spreading the word to peers and professors about the services available. Now I'm a contributor, building the infrastructure I once relied on.</p>
 
-                        <p>I work at the intersection of <em>Generative AI</em>, <em>High-Performance Computing</em>, and <em>production infrastructure</em>. My focus: making powerful AI systems accessible to researchers and enterprises through robust, scalable platforms.</p>
+                        <p>Currently a Student Assistant in the HPC team at <strong>GWDG</strong> — Germany's national supercomputing center and part of the NHR network. I work at the intersection of <em>Generative AI</em>, <em>High-Performance Computing</em>, and <em>production infrastructure</em>.</p>
 
                         <p>I've contributed to the <strong>SAIA Platform</strong>, built batch inference services handling thousands of requests, and developed security packages for sensitive research data. I don't just deploy models — I architect the infrastructure around them.</p>
 
@@ -370,19 +399,19 @@
                             <ul class="job-details">
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    Built <strong>production batch inference service</strong> on SAIA Platform enabling researchers to run multi-LLM workloads via user-friendly interface with automatic job recovery
+                                    <span>Built <strong>production batch inference service</strong> on SAIA Platform enabling researchers to run multi-LLM workloads via user-friendly interface with automatic job recovery</span>
                                 </li>
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    Developed <strong>GWDGenclave</strong> — Python security package implementing AES-256-GCM encryption for sensitive research data in HPC workflows
+                                    <span>Developed <strong>GWDGenclave</strong> — Python security package implementing AES-256-GCM encryption for sensitive research data in HPC workflows</span>
                                 </li>
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    Created end-to-end <strong>LLM benchmarking framework</strong> profiling performance across vLLM, SGLang, quantization strategies, and workload patterns
+                                    <span>Created end-to-end <strong>LLM benchmarking framework</strong> profiling performance across vLLM, SGLang, quantization strategies, and workload patterns</span>
                                 </li>
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    Built <strong>interactive JavaScript dashboards</strong> for real-time inference comparison, log analysis, and infrastructure cost modeling
+                                    <span>Built <strong>interactive JavaScript dashboards</strong> for real-time inference comparison, log analysis, and infrastructure cost modeling</span>
                                 </li>
                             </ul>
                             <div class="job-tags">
@@ -404,19 +433,19 @@
                             <ul class="job-details">
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    Developed <strong>AI Moderator System</strong> using LLMs (LLaMa 3, Mixtral) to analyze large-scale social media conversations for deliberative quality
+                                    <span>Developed <strong>AI Moderator System</strong> using LLMs (LLaMa 3, Mixtral) to analyze large-scale social media conversations for deliberative quality</span>
                                 </li>
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    Engineered <strong>scalable data pipelines</strong> for ingestion, preprocessing, and contextual embedding generation enabling real-time moderation
+                                    <span>Engineered <strong>scalable data pipelines</strong> for ingestion, preprocessing, and contextual embedding generation enabling real-time moderation</span>
                                 </li>
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    <strong>Fine-tuned LLMs</strong> (LLaMa 3, Mixtral) achieving 76% accuracy on moderation intervention tasks
+                                    <span><strong>Fine-tuned LLMs</strong> (LLaMa 3, Mixtral) achieving 76% accuracy on moderation intervention tasks</span>
                                 </li>
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    Orchestrated <strong>HPC deployments via SLURM</strong>, achieving 45% optimization in processing efficiency
+                                    <span>Orchestrated <strong>HPC deployments via SLURM</strong>, achieving 45% optimization in processing efficiency</span>
                                 </li>
                             </ul>
                             <div class="job-tags">
@@ -437,11 +466,11 @@
                             <ul class="job-details">
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    Designed <strong>scalable data solutions</strong> with APIs for streamlined hardware data acquisition
+                                    <span>Designed <strong>scalable data solutions</strong> with APIs for streamlined hardware data acquisition</span>
                                 </li>
                                 <li>
                                     <span class="detail-marker">▹</span>
-                                    Developed <strong>interactive D3.js and Plotly dashboards</strong> for real-time and historical hardware data visualization
+                                    <span>Developed <strong>interactive D3.js and Plotly dashboards</strong> for real-time and historical hardware data visualization</span>
                                 </li>
                             </ul>
                             <div class="job-tags">
@@ -449,24 +478,57 @@
                                 <span>D3.js</span>
                                 <span>Plotly</span>
                                 <span>REST APIs</span>
+                                <span>Data Pipelines</span>
                             </div>
                         </div>
 
                         <div class="tab-panel" id="earlier">
                             <div class="job-header">
-                                <h3>Earlier Experience</h3>
+                                <h3>Graduate Research Trainee — ML</h3>
+                                <p class="job-company">Amity University</p>
+                                <p class="job-meta">Sep 2020 — Mar 2021 · Remote</p>
                             </div>
-                            <div class="earlier-jobs">
-                                <div class="earlier-job">
-                                    <h4>Graduate Research Trainee — ML</h4>
-                                    <p class="job-company">Amity University · Sep 2020 — Mar 2021</p>
-                                    <p>Built ML pipelines for epileptic seizure prediction using BiLSTM and CNN architectures. Developed hospital management system with PostgreSQL + Flask.</p>
-                                </div>
-                                <div class="earlier-job">
-                                    <h4>Data Scientist Intern</h4>
-                                    <p class="job-company">Cadence Design Systems · Jun 2018 — Aug 2018</p>
-                                    <p>Developed predictive software for electronic circuit simulation using semi-supervised ML on PyTorch. Built Grafana dashboards for model performance tracking.</p>
-                                </div>
+                            <ul class="job-details">
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    <span>Built <strong>ML pipelines</strong> for epileptic seizure prediction using BiLSTM and CNN architectures</span>
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    <span>Developed <strong>hospital management system</strong> with PostgreSQL backend and Flask API — production deployment experience</span>
+                                </li>
+                            </ul>
+                            <div class="job-tags">
+                                <span>BiLSTM</span>
+                                <span>CNN</span>
+                                <span>PostgreSQL</span>
+                                <span>Flask</span>
+                            </div>
+
+                            <div class="job-header" style="margin-top: 2rem;">
+                                <h3>Data Scientist Intern</h3>
+                                <p class="job-company">Cadence Design Systems</p>
+                                <p class="job-meta">Jun 2018 — Aug 2018 · Noida, India</p>
+                            </div>
+                            <ul class="job-details">
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    <span>Developed <strong>predictive software</strong> for electronic circuit simulation using semi-supervised ML on PyTorch</span>
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    <span>Built <strong>Grafana dashboards</strong> for model performance tracking</span>
+                                </li>
+                                <li>
+                                    <span class="detail-marker">▹</span>
+                                    <span>First exposure to <strong>hardware-level understanding</strong> — PCB design, IC simulation, GPU architectures</span>
+                                </li>
+                            </ul>
+                            <div class="job-tags">
+                                <span>PyTorch</span>
+                                <span>Semi-supervised ML</span>
+                                <span>Grafana</span>
+                                <span>Hardware</span>
                             </div>
                         </div>
                     </div>
@@ -639,12 +701,13 @@ response = client.chat.completions.create(
                                 </div>
                             </div>
                             <h4>Inference Optimization Research</h4>
-                            <p>MSc thesis work: Multi-dimensional evaluation framework for LLM inference in production AI-as-a-Service. Quantization analysis, cost modeling, deployment recommendations.</p>
+                            <p>MSc thesis work: Multi-dimensional evaluation framework for LLM inference in production AI-as-a-Service. Benchmarking across latency, throughput, cost + automated recommendation system for optimal deployment configurations.</p>
                             <div class="project-tech">
                                 <span>vLLM</span>
                                 <span>SGLang</span>
                                 <span>GPTQ</span>
                                 <span>AWQ</span>
+                                <span>Cost Modeling</span>
                             </div>
                         </article>
                     </div>
@@ -668,7 +731,7 @@ response = client.chat.completions.create(
                         <div class="edu-year">Expected 2026</div>
                         <div class="edu-details">
                             <p><strong>Application Domain:</strong> Digital Humanities</p>
-                            <p><strong>Thesis:</strong> A Multi-Dimensional Evaluation Framework for LLM Inference Optimization in Production AI-as-a-Service Environments</p>
+                            <p><strong>Supervisor:</strong> Dr. Julian Kunkel, GWDG</p>
                         </div>
                     </div>
                     <div class="edu-card">
@@ -677,6 +740,50 @@ response = client.chat.completions.create(
                         <div class="edu-year">2016 — 2020</div>
                         <div class="edu-details">
                             <p><strong>Relevant Coursework:</strong> AI Techniques, Data Structures, Database Systems, Open Source Technologies</p>
+                        </div>
+                    </div>
+                    <div class="edu-card thesis-card">
+                        <div class="thesis-label">MSc Thesis — Supervised by Dr. Julian Kunkel, GWDG</div>
+                        <div class="edu-degree">A Multi-Dimensional Evaluation Framework for LLM Inference Optimization in Production AI-as-a-Service Environments</div>
+
+                        <div class="thesis-star">
+                            <div class="star-item">
+                                <span class="star-label">S</span>
+                                <div class="star-content">
+                                    <div class="star-title">Situation</div>
+                                    <p>Deploying LLMs in production means choosing between plethora of parameters, FP16 vs INT4 quantization, GPTQ vs AWQ, vLLM vs TensorRT-LLM. Wrong choice = wasted GPU budget & latency SLO violations. Currently: trial and error. Existing benchmarks (HELM, lm-eval) test model quality, not production inference.</p>
+                                </div>
+                            </div>
+                            <div class="star-item">
+                                <span class="star-label">T</span>
+                                <div class="star-content">
+                                    <div class="star-title">Task</div>
+                                    <p>Design a systematic framework that evaluates LLM inference across multiple dimensions simultaneously and automatically recommends optimal deployment configurations based on user-defined constraints.</p>
+                                </div>
+                            </div>
+                            <div class="star-item">
+                                <span class="star-label">A</span>
+                                <div class="star-content">
+                                    <div class="star-title">Action</div>
+                                    <p>Built end-to-end benchmarking harness on vLLM testing across concurrency levels (1→2000+ users), multiple quantization strategies, GPU telemetry at 1Hz. Measuring TTFT, P50/P95/P99 latency, throughput, cost-per-token. Developing automated recommendation engine with constraint-based filtering and Pareto-optimal configuration selection.</p>
+                                </div>
+                            </div>
+                            <div class="star-item">
+                                <span class="star-label">R</span>
+                                <div class="star-content">
+                                    <div class="star-title">Result</div>
+                                    <p>Framework can be integrated into GWDG's SAIA Platform. Data-driven deployment decisions replacing guesswork. Expected 1.5–3× throughput improvements from optimal configuration selection. Reduces expertise barrier — Just plug in input constraints & get recommendations.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="thesis-tags">
+                            <span>vLLM</span>
+                            <span>PagedAttention</span>
+                            <span>GPTQ/AWQ Quantization</span>
+                            <span>FlashAttention</span>
+                            <span>Cost Modeling</span>
+                            <span>Automated Recommendations</span>
                         </div>
                     </div>
                 </div>
@@ -702,9 +809,9 @@ response = client.chat.completions.create(
                             <span class="link-icon">in</span>
                             <span class="link-text">linkedin.com/in/vanshmohan</span>
                         </a>
-                        <a href="https://github.com/vanshmohan" target="_blank" class="contact-link">
+                        <a href="https://gitlab-ce.gwdg.de/vansh.mohan" target="_blank" class="contact-link">
                             <span class="link-icon">&lt;/&gt;</span>
-                            <span class="link-text">github.com/vanshmohan</span>
+                            <span class="link-text">gitlab-ce.gwdg.de/vansh.mohan</span>
                         </a>
                     </div>
                     <div class="contact-languages">

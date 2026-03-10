@@ -171,3 +171,134 @@ document.querySelectorAll('.project-card').forEach(card => {
 console.log('%c Hey there! 👋', 'font-size: 24px; font-weight: bold;');
 console.log('%c Looking at the source code? Nice!', 'font-size: 14px;');
 console.log('%c If you want to chat about GenAI infrastructure, reach out: vansh.mohan@stud.uni-goettingen.de', 'font-size: 12px; color: #3b82f6;');
+
+// ===== PROGRESS BAR =====
+const progressBar = document.getElementById('progressBar');
+
+function updateProgressBar() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+}
+
+window.addEventListener('scroll', updateProgressBar);
+
+// ===== SLIDE DOT INDICATORS =====
+const slideDots = document.querySelectorAll('.slide-dots .dot');
+const allSections = ['hero', 'about', 'stack', 'work', 'projects', 'education', 'contact'];
+
+function updateSlideDots() {
+    const scrollY = window.scrollY;
+    let currentSection = 'hero';
+
+    allSections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                currentSection = sectionId;
+            }
+        }
+    });
+
+    slideDots.forEach(dot => {
+        dot.classList.remove('active');
+        if (dot.getAttribute('data-section') === currentSection) {
+            dot.classList.add('active');
+        }
+    });
+
+    // Update arrow button states
+    updateArrowStates(currentSection);
+}
+
+// Smooth scroll for dots
+slideDots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = dot.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+window.addEventListener('scroll', updateSlideDots);
+
+// ===== ARROW NAVIGATION =====
+const arrowUp = document.getElementById('arrowUp');
+const arrowDown = document.getElementById('arrowDown');
+
+function getCurrentSectionIndex() {
+    const scrollY = window.scrollY;
+    let currentIndex = 0;
+
+    allSections.forEach((sectionId, index) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const sectionTop = section.offsetTop - 150;
+            if (scrollY >= sectionTop) {
+                currentIndex = index;
+            }
+        }
+    });
+
+    return currentIndex;
+}
+
+function updateArrowStates(currentSection) {
+    const currentIndex = allSections.indexOf(currentSection);
+
+    if (currentIndex <= 0) {
+        arrowUp.classList.add('disabled');
+    } else {
+        arrowUp.classList.remove('disabled');
+    }
+
+    if (currentIndex >= allSections.length - 1) {
+        arrowDown.classList.add('disabled');
+    } else {
+        arrowDown.classList.remove('disabled');
+    }
+}
+
+function navigateToSection(direction) {
+    const currentIndex = getCurrentSectionIndex();
+    let targetIndex;
+
+    if (direction === 'up') {
+        targetIndex = Math.max(0, currentIndex - 1);
+    } else {
+        targetIndex = Math.min(allSections.length - 1, currentIndex + 1);
+    }
+
+    const targetSection = document.getElementById(allSections[targetIndex]);
+    if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+arrowUp.addEventListener('click', () => navigateToSection('up'));
+arrowDown.addEventListener('click', () => navigateToSection('down'));
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    // Only handle if not focused on an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        navigateToSection('down');
+    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        navigateToSection('up');
+    }
+});
+
+// Initialize states on load
+updateSlideDots();
+updateProgressBar();
